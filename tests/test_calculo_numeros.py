@@ -15,7 +15,7 @@ class TestCalculoNumeros(unittest.TestCase):
         numero = ingrese_numero()
         self.assertEqual(numero, 100)
 
-    '''@patch(  # este patch controla lo que hace el input
+    @patch(  # este patch controla lo que hace el input
         'builtins.input',
         return_value='-100'
     )
@@ -23,7 +23,7 @@ class TestCalculoNumeros(unittest.TestCase):
         with self.assertRaises(NumeroDebeSerPositivo):
             ingrese_numero()
 
-    @patch(  # este patch controla lo que hace el input
+    '''@patch(  # este patch controla lo que hace el input
         'builtins.input',
         return_value='AAA'
     )
